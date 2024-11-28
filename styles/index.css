@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.start-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/plane.webp");
+    background-size: cover;
+    background-position: center;
+
+}
+.start-container h1{
+    color: #fff;
+    font-size: 6em;
+    margin-bottom: 20px;
+}
+.start-container a{
+    background-color: #2ba7fa;
+    padding: 14px 45px;
+    font-size: 1.8em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all .4s;
+    color: #fff;
+    text-decoration: none;
+}
+.start-container a:hover{
+    color: #2ba7fa;
+    background-color: #fff;
+}
+.start-container div{
+    width: 60%;
+    /* height: 400px; */
+    background-color: rgba(66, 66, 66, 0.2);
+    text-align: center;
+    backdrop-filter: blur(3px);
+    padding: 24px;
+}

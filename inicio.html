@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/inicio.css">
+    <title>Gestor de Vuelos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Gestión de Vuelos</h1>
+        
+        <h2>Agregar Vuelo</h2>
+        <form id="vueloForm">
+            <input type="text" id="origen" placeholder="Origen" required>
+            <span id="origenError" class="error"></span>
+            
+            <input type="text" id="destino" placeholder="Destino" required>
+            <span id="destinoError" class="error"></span>
+            
+            <input type="date" id="fechaIda" required>
+            <span id="fechaIdaError" class="error"></span>
+            
+            <input type="date" id="fechaVuelta">
+            <span id="fechaVueltaError" class="error"></span>
+            
+            <input type="number" id="precio" placeholder="Precio" required>
+            <span id="precioError" class="error"></span>
+            
+            <select id="idAerolinea" required>
+                <option value="">Seleccionar Aerolínea</option>
+            </select>
+            <span id="aerolineaError" class="error"></span>
+            
+            <select id="clase" required>
+                <option value="">Seleccionar Clase</option>
+                <option value="Económica">Económica</option>
+                <option value="Ejecutiva">Ejecutiva</option>
+                <option value="Primera">Primera</option>
+            </select>
+            <span id="claseError" class="error"></span>
+            
+            <button type="submit">Agregar Vuelo</button>
+        </form>
+
+        <h2>Lista de Vuelos</h2>
+        <div>
+            <select id="filtroAerolinea">
+                <option value="">Todas las Aerolíneas</option>
+            </select>
+            <select id="filtroClase">
+                <option value="">Todas las Clases</option>
+                <option value="Económica">Económica</option>
+                <option value="Ejecutiva">Ejecutiva</option>
+                <option value="Primera">Primera</option>
+            </select>
+            <button id="aplicarFiltros">Aplicar Filtros</button>
+            <button id="ordenarPrecio">Ordenar por Precio</button>
+        </div>
+        <table id="vuelosTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha Ida</th>
+                    <th>Fecha Vuelta</th>
+                    <th>Precio</th>
+                    <th>Aerolínea</th>
+                    <th>Clase</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevPage">Anterior</button>
+            <span id="currentPage"></span>
+            <button id="nextPage">Siguiente</button>
+        </div>
+
+        <h2>Agregar Aerolínea</h2>
+        <form id="aerolineaForm">
+            <input type="text" id="nombreAerolinea" placeholder="Nombre de la Aerolínea" required>
+            <span id="nombreAerolineaError" class="error"></span>
+            <button type="submit">Agregar Aerolínea</button>
+        </form>
+
+        <h2>Lista de Aerolíneas</h2>
+        <table id="aerolineasTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Vuelo</h2>
+            <form id="editVueloForm">
+                <input type="hidden" id="editId">
+                <input type="text" id="editOrigen" placeholder="Origen" required>
+                <span id="editOrigenError" class="error"></span>
+                
+                <input type="text" id="editDestino" placeholder="Destino" required>
+                <span id="editDestinoError" class="error"></span>
+                
+                <input type="date" id="editFechaIda" required>
+                <span id="editFechaIdaError" class="error"></span>
+                
+                <input type="date" id="editFechaVuelta">
+                <span id="editFechaVueltaError" class="error"></span>
+                
+                <input type="number" id="editPrecio" placeholder="Precio" required>
+                <span id="editPrecioError" class="error"></span>
+                
+                <select id="editAerolinea" required>
+                    <option value="">Seleccionar Aerolínea</option>
+                </select>
+                <span id="editAerolineaError" class="error"></span>
+                
+                <select id="editClase" required>
+                    <option value="">Seleccionar Clase</option>
+                    <option value="Económica">Económica</option>
+                    <option value="Ejecutiva">Ejecutiva</option>
+                    <option value="Primera">Primera</option>
+                </select>
+                <span id="editClaseError" class="error"></span>
+                
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
